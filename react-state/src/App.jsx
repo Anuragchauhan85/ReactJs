@@ -8,6 +8,10 @@ import Lottery from './Lottery';
 import TicketNum from './TicketNum';
 import Ticket from './Ticket';
 import { sum } from './helper';
+import Form from './Form';
+import CommentForm from './CommentForm';
+import Comment from './Comment';
+
 function App() {
   // const [count, setCount] = useState(0)
 
@@ -33,18 +37,31 @@ function App() {
   //     <Lottery/>
   //   </>
   // )
-  let winCondition = (ticket) => {
-    // return sum(ticket) === 15;                                win condition for sum of num is 15
-    // return ticket.every((num) => num === ticket[0]);          win condition for all num is same
-    return ticket[0] === 0;                              
-    //         win condition first num is 0
-  }
+  // let winCondition = (ticket) => {
+  //   // return sum(ticket) === 15;                                win condition for sum of num is 15
+  //   // return ticket.every((num) => num === ticket[0]);          win condition for all num is same
+  //   return ticket[0] === 0;
+  //   //         win condition first num is 0
+  // }
 
-    return (
-      <>
-        <Lottery n={3} winCondition={winCondition} />
-      </>
-    );
+  //   return (
+  //     <>
+  //       <Lottery n={3} winCondition={winCondition} />
+  //     </>
+  //   );
+  
+  // return (
+  //   <>
+  //     <Form/>
+  //   </>
+  // );
+
+  return (
+    <>
+      <Comment />
+      
+    </>
+  );
 }
 
 export default App
