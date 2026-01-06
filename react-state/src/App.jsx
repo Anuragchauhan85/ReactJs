@@ -11,6 +11,8 @@ import { sum } from './helper';
 import Form from './Form';
 import CommentForm from './CommentForm';
 import Comment from './Comment';
+import Count from "./Count";
+import Joke from './Joke';
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -56,12 +58,24 @@ function App() {
   //   </>
   // );
 
-  return (
-    <>
-      <Comment />
+  // return (
+  //   <>
+  //     <Comment />
       
-    </>
-  );
+  //   </>
+  // );
+
+  // return (
+  //   <>
+  //     <Count />
+  //   </>
+  // );
+
+   return (
+     <>
+       <Joke />
+     </>
+   );
 }
 
 export default App
