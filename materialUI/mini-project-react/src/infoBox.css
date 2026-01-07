@@ -1,0 +1,8 @@
+.Box{
+    text-align: center;
+}
+
+.infoBox{
+    display: flex ;
+    justify-content: center;
+}
