@@ -3,7 +3,6 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import "./infoBox.css"; 
-import hazeImg from "./assets/haze.jpg";
 import hotdayImg from "./assets/hotday.jpg"
 import rainImg from "./assets/rain.jpg";
 import winterImg from "./assets/winter.jpg";
