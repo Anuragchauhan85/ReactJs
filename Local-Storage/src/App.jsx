@@ -2,13 +2,15 @@ import React from 'react'
 
 const App = () => {
 
-  function getdata9() {
-    const response = fetch("https://jsonplaceholder.typicode.com/todos/1");
-    console.log(response);
+  const getdata =async () => {
+    const response =await fetch("https://jsonplaceholder.typicode.com/todos/1")
+    const data = await response.json()
+    console.log(data);
   }
 
   return (
-    <div><button onClick={getdata9}>get data</button>
+    <div>
+      <button onClick={getdata}>get data</button>
     </div>
   )
 }
