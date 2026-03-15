@@ -10,7 +10,9 @@ const App = () => {
   const [index, setIndex] = useState(1)
 
   const getData = async() => {
-  const response = await  axios.get("https://picsum.photos/v2/list?page={index}&limit=64");
+  const response = await axios.get(
+    `https://picsum.photos/v2/list?page=${index}&limit=12`,
+  );
   
     setUserData(response.data)
   }
@@ -18,9 +20,9 @@ const App = () => {
 
   useEffect(function () {
     getData()
-  },[])
+  },[index])
 
-  let printUserData = <h2 className='text-gray-400 text-xs'>No User Available</h2>
+  let printUserData = <h2 className='text-gray-300 text-xs absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-semibold'>Loading...</h2>
 
   if (userData.length > 0) {
     printUserData = userData.map(function (elem,idx) {
@@ -39,27 +41,30 @@ const App = () => {
         </div>
       );
     });
-  }
+  }         
 
   return (
     <div className="bg-black overflow-auto h-screen mt text-white">
-      <div className="flex flex-wrap gap-4 p-3">{printUserData}</div>
+      <div className="flex h-[90%] flex-wrap gap-4 p-3">{printUserData}</div>
       <div className="flex justify-center gap-6 item-center p-4">
         <button
           onClick={() => {
             if(index>1){
-            setIndex(index - 1);}
+              setIndex(index - 1);
+              setUserData([]);
+            }
           }}
-          className="bg-amber-400 text-sm cursor-pointer active:scale-95 text-black rounded px-4 py-2 font-semiboldt"
+          className=" bg-amber-400 text-sm cursor-pointer active:scale-95 text-black rounded px-4 py-2  font-semiboldt"
         >
           Prev
         </button>
         <h1 >{index }</h1>
-        <button
+        <button 
           onClick={() => {
+            setUserData([]);
             setIndex(index + 1);
           }}
-          className="bg-amber-400 text-sm cursor-pointer active:scale-95 text-black rounded px-4 py-2 font-semiboldt"
+          className=" bg-amber-400 text-sm cursor-pointer active:scale-95 text-black rounded px-4 py-2  font-semiboldt"
         >
           Next
         </button>
