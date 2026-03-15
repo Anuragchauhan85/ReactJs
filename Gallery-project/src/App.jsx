@@ -7,8 +7,10 @@ const App = () => {
 
   const [userData, setUserData] = useState([])
 
+  const [index, setIndex] = useState(1)
+
   const getData = async() => {
-  const response = await  axios.get("https://picsum.photos/v2/list?page=3&limit=64");
+  const response = await  axios.get("https://picsum.photos/v2/list?page={index}&limit=64");
   
     setUserData(response.data)
   }
@@ -40,12 +42,30 @@ const App = () => {
   }
 
   return (
-    <div className='bg-black overflow-auto h-screen mt text-white'>
-      <div className='flex flex-wrap gap-4'>
-        {printUserData}
+    <div className="bg-black overflow-auto h-screen mt text-white">
+      <div className="flex flex-wrap gap-4 p-3">{printUserData}</div>
+      <div className="flex justify-center gap-6 item-center p-4">
+        <button
+          onClick={() => {
+            if(index>1){
+            setIndex(index - 1);}
+          }}
+          className="bg-amber-400 text-sm cursor-pointer active:scale-95 text-black rounded px-4 py-2 font-semiboldt"
+        >
+          Prev
+        </button>
+        <h1 >{index }</h1>
+        <button
+          onClick={() => {
+            setIndex(index + 1);
+          }}
+          className="bg-amber-400 text-sm cursor-pointer active:scale-95 text-black rounded px-4 py-2 font-semiboldt"
+        >
+          Next
+        </button>
       </div>
     </div>
-  )
+  );
 }
 
 export default App
