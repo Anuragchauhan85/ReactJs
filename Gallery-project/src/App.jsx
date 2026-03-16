@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import axios from 'axios'
 import { useState } from 'react'
+import Card from './components/Card'
 
 
 const App = () => {
@@ -11,7 +12,7 @@ const App = () => {
 
   const getData = async() => {
   const response = await axios.get(
-    `https://picsum.photos/v2/list?page=${index}&limit=12`,
+    `https://picsum.photos/v2/list?page=${index}&limit=21`,
   );
   
     setUserData(response.data)
@@ -28,16 +29,7 @@ const App = () => {
     printUserData = userData.map(function (elem,idx) {
       return (
         <div key={idx} className='mt-5 ml-5 mb-5 '>
-          <a href={elem.url } target='_blank'>
-            <div className="h-40 w-44 overflow-hidden bg-white rounded-xl">
-              <img
-                className="h-full w-full object-cover"
-                src={elem.download_url}
-                alt=""
-              />
-            </div>
-            <h2 className="font-bold text-lg">{elem.author}</h2>
-          </a>
+          <Card elem={elem } />
         </div>
       );
     });
@@ -54,11 +46,12 @@ const App = () => {
               setUserData([]);
             }
           }}
+          style={{opacity:index==1?0.6:1}}
           className=" bg-amber-400 text-sm cursor-pointer active:scale-95 text-black rounded px-4 py-2  font-semiboldt"
         >
           Prev
         </button>
-        <h1 >{index }</h1>
+        <h1 >Page {index }</h1>
         <button 
           onClick={() => {
             setUserData([]);
