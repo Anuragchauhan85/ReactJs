@@ -1,9 +1,24 @@
 import React from 'react'
+import { Route, Routes } from 'react-router-dom'
+import Home from './Pages/Home'
+import About from "./Pages/About";
+import Contact from "./Pages/Contact";
+import Navbar from './components/navbar';
+import Product from './Pages/Product'
+
 
 const App = () => {
   return (
-    <div>App</div>
-  )
+    <div>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Contact" element={<Contact />} />
+        <Route path="/Product" element={<Product />} />
+      </Routes>
+    </div>
+  );
 }
 
 export default App
