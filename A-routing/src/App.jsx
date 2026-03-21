@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from './components/Navbar';
+import Nav2 from "./components/Nav2";
 import Footer from './components/Footer';
 import{Routes,Route} from 'react-router-dom'
 import Home from './pages/Home';
@@ -17,6 +18,7 @@ const App = () => {
   return (
     <div className="h-screen bg-black text-white">
       <Navbar />
+      <Nav2/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
