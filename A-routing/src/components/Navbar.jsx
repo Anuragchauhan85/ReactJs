@@ -12,6 +12,9 @@ const Navbar = () => {
         <Link className="text-lg font-medium" to="/about">
           About
         </Link>
+        <Link className="text-lg font-medium" to="/courses">
+          Courses
+        </Link>
         <Link className="text-lg font-medium" to="/product">
           Product
         </Link>

@@ -2,14 +2,16 @@ import React from 'react'
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import{Routes,Route} from 'react-router-dom'
-import Home from './components/pages/Home';
-import About from './components/pages/About';
-import Contact from './components/pages/Contact';
-import Notfound from './components/pages/Notfound';
-import Product from './components/pages/Product';
-import Mens from "./components/pages/Mens";
-import Women from "./components/pages/Women";
-import Kids from "./components/pages/Kids";
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Notfound from './pages/Notfound';
+import Product from './pages/Product';
+import Mens from "./pages/Mens";
+import Women from "./pages/Women";
+import Kids from "./pages/Kids";
+import Courses from "./pages/Courses";
+import Coursedetail from './pages/Coursedetail';
 
 const App = () => {
   return (
@@ -19,6 +21,8 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/courses" element={<Courses />} />
+        <Route path="/courses/:id" element={<Coursedetail />} />
         <Route path="/product" element={<Product />}>
           <Route path="men" element={<Mens />} />
           <Route path="women" element={<Women />} />
